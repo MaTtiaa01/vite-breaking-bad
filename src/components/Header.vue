@@ -6,13 +6,30 @@ export default {
 
 <template>
     <header>
-        <img src="" alt="">
-        <h1></h1>
+        <div class="logo">
+            <img src="../assets/img/Breaking_Bad_logo.svg.png" alt="">
+        </div>
+        <h1>Breaking Bad Api</h1>
     </header>
 
 </template>
 
 
-<style>
+<style lang="scss" scoped>
+@use "../assets/scss/Variables.scss" as *;
 
+header {
+    margin-bottom: 2rem;
+
+    h1 {
+        color: $bb-light;
+        display: inline-block;
+    }
+
+    .logo {
+        display: inline-block;
+        width: 50px;
+    }
+
+}
 </style>
