@@ -1,6 +1,31 @@
 <script>
+import { store } from "../store";
+import axios from "axios";
+
 export default {
     name: "MainBox",
+    data() {
+        return {
+            store,
+        }
+    },
+    methods: {
+        CallApi(url) {
+            axios.get(url)
+                .then(response => {
+                    console.log(response);
+                    this.store.charData = response.data;
+                    console.log(this.store.charData);
+                })
+                .catch(err => {
+                    console.error(err.message);
+                    this.store.error = err.message
+                })
+        }
+    },
+    mounted() {
+        this.CallApi(this.store.url)
+    }
 }
 </script>
 
@@ -8,10 +33,10 @@ export default {
     <div class="box">
         <div class="characters_found"></div>
         <div class="cards row row-cols-2 row-cols-md-4 row-cols-lg-5">
-            <div class="col">
+            <div class="col" v-for="character in store.charData">
                 <div class="character">
-                    <img src="" alt="">
-                    <h4 class="char_name"></h4>
+                    <img :src="character.img" alt="">
+                    <h4 class="char_name">{{ character.name }}</h4>
                     <div class="description"></div>
                 </div>
             </div>

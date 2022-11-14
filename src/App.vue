@@ -1,7 +1,9 @@
 <script >
-import axios from "axios";
+
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
+import { store } from "./store";
+
 export default {
   name: "App",
   components: {
@@ -10,17 +12,15 @@ export default {
   },
   data() {
     return {
+      store
     }
   },
   methods: {
-    CallApi(url) {
-      axios.get(url)
-        .then(response => {
-          console.log(response);
-        })
-    }
+
   },
-  mounted: {
+  mounted() {
+
+
   }
 }
 </script>
