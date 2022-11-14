@@ -1,11 +1,22 @@
 <script>
+import MainBox from "./MainBox.vue";
 export default {
-    name: "Main"
+    name: "Main",
+    components: {
+        MainBox,
+    }
 }
 </script>
 
 <template>
-
+    <main>
+        <div class="container">
+            <div class="main_commands"></div>
+            <div class="characters_list">
+                <MainBox></MainBox>
+            </div>
+        </div>
+    </main>
 
 </template>
 
