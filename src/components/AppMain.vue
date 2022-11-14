@@ -1,7 +1,7 @@
 <script>
 import MainBox from "./MainBox.vue";
 export default {
-    name: "Main",
+    name: "AppMain",
     components: {
         MainBox,
     }

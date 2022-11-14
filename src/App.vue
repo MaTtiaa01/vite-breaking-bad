@@ -1,14 +1,14 @@
 <script >
 
 import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
+import AppMain from "./components/AppMain.vue";
 import { store } from "./store";
 
 export default {
   name: "App",
   components: {
     Header,
-    Main,
+    AppMain,
   },
   data() {
     return {
@@ -28,7 +28,7 @@ export default {
 <template>
   <Header></Header>
   <!-- /header -->
-  <Main></Main>
+  <AppMain></AppMain>
 
 </template>
 

@@ -10,7 +10,7 @@ export default {
         }
     },
     methods: {
-        CallApi(url) {
+        callApi(url) {
             axios.get(url)
                 .then(response => {
                     console.log(response);
@@ -24,14 +24,14 @@ export default {
         }
     },
     mounted() {
-        this.CallApi(this.store.url)
+        this.callApi(this.store.url)
     }
 }
 </script>
 
 <template>
     <div class="box">
-        <div class="characters_found"></div>
+        <div class="characters_found">ABC</div>
         <div class="cards row row-cols-2 row-cols-md-4 row-cols-lg-5">
             <div class="col" v-for="character in store.charData">
                 <div class="character">
@@ -46,5 +46,11 @@ export default {
 
 
 <style lang="scss" scoped>
+// @use "../assets/scss/Variables.scss" as *;
 
+// .box {
+//     background-color: $light;
+//     padding: 1rem;
+
+// }
 </style>

@@ -6,4 +6,5 @@ export const store = reactive({
     url: "https://www.breakingbadapi.com/api/characters",
     category: null,
     status: null,
+    prova: [1, 2, 3]
 })
