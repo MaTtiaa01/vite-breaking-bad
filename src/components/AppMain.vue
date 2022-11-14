@@ -21,6 +21,6 @@ export default {
 </template>
 
 
-<style>
-
+<style lang="scss" scoped>
+@use "../../node_modules/bootstrap"
 </style>

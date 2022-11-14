@@ -31,13 +31,19 @@ export default {
 
 <template>
     <div class="box">
-        <div class="characters_found">ABC</div>
-        <div class="cards row row-cols-2 row-cols-md-4 row-cols-lg-5">
+        <div class="characters_found"></div>
+        <div class="cards row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4">
             <div class="col" v-for="character in store.charData">
                 <div class="character">
-                    <img :src="character.img" alt="">
-                    <h4 class="char_name">{{ character.name }}</h4>
-                    <div class="description"></div>
+                    <div class="thumb">
+
+                        <img :src="character.img" alt="">
+                    </div>
+                    <h4 class="char_name text-white">{{ character.name }}</h4>
+                    <div class="description">
+                        <div class="category">{{ character.category }}</div>
+                        <div class="status">{{ character.status }}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,11 +52,34 @@ export default {
 
 
 <style lang="scss" scoped>
-// @use "../assets/scss/Variables.scss" as *;
+@use "../../node_modules/bootstrap";
+@use "../assets/scss/Variables.scss" as *;
 
-// .box {
-//     background-color: $light;
-//     padding: 1rem;
+.box {
+    background-color: $bb-light;
+    padding: 1rem;
 
-// }
+    .character {
+        background-color: $bb-primary;
+        padding: 1rem;
+
+        .thumb {
+            img {
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+
+        .description {
+            margin-bottom: 1rem;
+
+            .status,
+            .category {
+                color: grey;
+            }
+        }
+
+    }
+
+}
 </style>
