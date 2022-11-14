@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             store,
+            charFounded: null,
         }
     },
     methods: {
@@ -16,6 +17,8 @@ export default {
                     console.log(response);
                     this.store.charData = response.data;
                     console.log(this.store.charData);
+                    this.charFounded = response.data.length
+                    console.log(this.charFounded);
                 })
                 .catch(err => {
                     console.error(err.message);
@@ -32,7 +35,7 @@ export default {
 <template>
     <div class="box">
         <div class="characters_found text-uppercase">
-            Found {{ 62 }} characters
+            Found {{ charFounded }} characters
             <!-- store.charData.length -->
         </div>
         <div class="cards row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
