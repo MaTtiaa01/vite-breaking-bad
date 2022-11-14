@@ -1,9 +1,11 @@
 <script>
+import MainCommands from "./MainCommands.vue";
 import MainBox from "./MainBox.vue";
 export default {
     name: "AppMain",
     components: {
         MainBox,
+        MainCommands,
     }
 }
 </script>
@@ -11,7 +13,7 @@ export default {
 <template>
     <main>
         <div class="container">
-            <div class="main_commands"></div>
+            <MainCommands></MainCommands>
             <div class="characters_list">
                 <MainBox></MainBox>
             </div>
