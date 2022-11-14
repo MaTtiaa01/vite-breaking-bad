@@ -2,7 +2,6 @@
 import axios from "axios";
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
-
 export default {
   name: "App",
   components: {
@@ -11,7 +10,6 @@ export default {
   },
   data() {
     return {
-
     }
   },
   methods: {
@@ -21,13 +19,10 @@ export default {
           console.log(response);
         })
     }
-
   },
   mounted: {
-
   }
 }
-
 </script>
 
 <template>

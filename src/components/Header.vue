@@ -30,6 +30,5 @@ header {
         display: inline-block;
         width: 50px;
     }
-
 }
 </style>
