@@ -5,19 +5,19 @@ export default {
     data() {
         return {
             store,
-            categorySelector: "",
 
         }
     },
     methods: {
-        onChange(event) {
-            console.log(event.target.value);
-            if (event.target.value === "breakingBad") {
+        onChange() {
+            if (this.categorySelector === "breakingBad") {
                 this.store.url = "https://www.breakingbadapi.com/api/characters"
                 console.log("sono dentro l'if");
-            } else {
+            } else if (this.categorySelector === "betterCallSaul") {
                 this.store.url = "https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul"
                 console.log("sono dentro l'else");
+            } else {
+                this.store.url = ""
             }
 
 
@@ -32,7 +32,7 @@ export default {
     <div class="main_commands">
         <form>
 
-            <select v-model="categorySelector" @change="onChange($event); $emit('searchActor')">
+            <select v-model="store.categorySelector" @change="onChange(); $emit('searchActor')">
                 <option value="">Select something</option>
                 <option value="breakingBad">Breaking-Bad</option>
                 <option value="betterCallSaul">Better Call Saul</option>

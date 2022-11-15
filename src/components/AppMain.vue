@@ -39,8 +39,8 @@ export default {
 
 <template>
     <main>
-        <div class="container" @searchActor="callApi(url)">
-            <MainCommands></MainCommands>
+        <div class="container">
+            <MainCommands @searchActor="callApi(store.url)"></MainCommands>
             <div class="characters_list">
                 <MainBox></MainBox>
             </div>
