@@ -20,7 +20,7 @@ export default {
             } else {
                 this.store.url = "https://www.breakingbadapi.com/api/characters"
             }
-        }
+        },
     },
     mounted() {
     }
@@ -31,7 +31,7 @@ export default {
     <div class="main_commands">
         <form>
 
-            <select v-model="store.categorySelector" @change="onChange(); $emit('searchActor')">
+            <select v-model="store.categorySelector" @change="onChange(); $emit('searchActor');">
                 <option value="">Select something</option>
                 <option value="breakingBad">Breaking-Bad</option>
                 <option value="betterCallSaul">Better Call Saul</option>

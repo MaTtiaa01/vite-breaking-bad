@@ -7,5 +7,6 @@ export const store = reactive({
     category: null,
     status: null,
     categorySelector: "",
+    charFounded: ""
 })
 

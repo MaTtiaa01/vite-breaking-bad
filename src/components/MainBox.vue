@@ -7,17 +7,18 @@ export default {
     data() {
         return {
             store,
-            charFounded: null,
+
         }
     },
+
 }
 </script>
 
 <template>
     <div class="box">
         <div class="characters_found text-uppercase">
-            Found {{ charFounded }} characters
-            <!-- store.charData.length -->
+            Found {{ store.charFounded }} characters
+
         </div>
         <div class="cards row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
             <div class="col" v-for="character in store.charData">

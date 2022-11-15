@@ -21,8 +21,8 @@ export default {
                     console.log(response);
                     this.store.charData = response.data;
                     console.log(this.store.charData);
-                    this.charFounded = response.data.length
-                    console.log(this.charFounded);
+                    this.store.charFounded = response.data.length
+                    console.log(this.store.charFounded);
                 })
                 .catch(err => {
                     console.error(err.message);
