@@ -6,24 +6,21 @@ export default {
         return {
             store,
             categorySelector: "",
-            url: ""
 
         }
     },
     methods: {
-        changeCategory() {
-
-            if (this.categorySelector === "breakingBad") {
-                this.url = "https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul"
+        changeCategory(event) {
+            console.log(event.target.value);
+            if (event.target.value == "breakingBad") {
+                this.store.url = "https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul"
             } else {
-                this.url = "https://www.breakingbadapi.com/api/characters"
+                this.store.url = "https://www.breakingbadapi.com/api/characters"
             }
-            this.store.url = this.url
             this.store.loaded = true
         }
     },
     mounted() {
-        this.changeCategory()
     }
 }
 </script>
@@ -33,6 +30,7 @@ export default {
         <form>
 
             <select v-model="categorySelector" @change="changeCategory($event)">
+                <option value="">Select something</option>
                 <option value="breakingBad">Breaking-Bad</option>
                 <option value="betterCallSaul">Better Call Saul</option>
             </select>
