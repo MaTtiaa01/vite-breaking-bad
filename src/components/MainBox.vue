@@ -10,27 +10,6 @@ export default {
             charFounded: null,
         }
     },
-    methods: {
-        callApi(url) {
-            axios.get(url)
-                .then(response => {
-                    console.log(response);
-                    this.store.charData = response.data;
-                    console.log(this.store.charData);
-                    this.charFounded = response.data.length
-                    console.log(this.charFounded);
-                })
-                .catch(err => {
-                    console.error(err.message);
-                    this.store.error = err.message
-                })
-        }
-    },
-    mounted() {
-        if (this.store.loaded === true) {
-            this.callApi(this.store.url)
-        }
-    }
 }
 </script>
 
