@@ -57,6 +57,7 @@ export default {
     .character {
         background-color: $bb-primary;
         padding: 1rem;
+        height: 500px;
 
         .thumb {
             img {
