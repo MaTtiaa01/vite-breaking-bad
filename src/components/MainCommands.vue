@@ -10,17 +10,16 @@ export default {
     },
     methods: {
         onChange() {
-            if (this.categorySelector === "breakingBad") {
+            console.log(this.store.categorySelector);
+            if (this.store.categorySelector === "breakingBad") {
                 this.store.url = "https://www.breakingbadapi.com/api/characters"
                 console.log("sono dentro l'if");
-            } else if (this.categorySelector === "betterCallSaul") {
+            } else if (this.store.categorySelector === "betterCallSaul") {
                 this.store.url = "https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul"
                 console.log("sono dentro l'else");
             } else {
-                this.store.url = ""
+                this.store.url = "https://www.breakingbadapi.com/api/characters"
             }
-
-
         }
     },
     mounted() {
