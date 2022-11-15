@@ -27,7 +27,9 @@ export default {
         }
     },
     mounted() {
-        this.callApi(this.store.url)
+        if (this.store.loaded === true) {
+            this.callApi(this.store.url)
+        }
     }
 }
 </script>

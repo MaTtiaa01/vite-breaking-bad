@@ -1,6 +1,30 @@
 <script>
+import { store } from "../store.js";
 export default {
-    name: "MainCommands"
+    name: "MainCommands",
+    data() {
+        return {
+            store,
+            categorySelector: "",
+            url: ""
+
+        }
+    },
+    methods: {
+        changeCategory() {
+
+            if (this.categorySelector === "breakingBad") {
+                this.url = "https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul"
+            } else {
+                this.url = "https://www.breakingbadapi.com/api/characters"
+            }
+            this.store.url = this.url
+            this.store.loaded = true
+        }
+    },
+    mounted() {
+        this.changeCategory()
+    }
 }
 </script>
 
@@ -8,9 +32,9 @@ export default {
     <div class="main_commands">
         <form>
 
-            <select>
-                <option value="Breaking-Bad">Breaking-Bad</option>
-                <option value="Rick-and-Morty">Rick-and-Morty</option>
+            <select v-model="categorySelector" @change="changeCategory($event)">
+                <option value="breakingBad">Breaking-Bad</option>
+                <option value="betterCallSaul">Better Call Saul</option>
             </select>
 
         </form>
